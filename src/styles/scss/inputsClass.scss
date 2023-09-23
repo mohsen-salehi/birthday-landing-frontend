@@ -1,0 +1,72 @@
+.icon-input{
+  z-index: 2;
+  left: 30px;
+  top: 50%;
+  transform: translate(-50% , -50%);
+}
+.input-styles{
+  border-radius: 20px;
+  border: 1px solid #FFF;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(2px);
+  &::placeholder{
+    color: white;
+  }
+}
+.input-styles-otp{
+  width: 60px;
+  height: 60px;
+  outline: none !important;
+}
+.input-success-styles{
+  color: #1CCD8D !important;
+  border-radius: 20px;
+  transform-origin: left;
+  border: 1px solid #1CCD8D;
+  background: rgba(64, 255, 0, 0.2);
+  backdrop-filter: blur(2px);
+  animation: error 0.8s alternate ;
+  &::placeholder{
+    color: #1CCD8D;
+  }
+  &:focus{
+    border: none;
+    outline: none;
+  }
+  @at-root {
+    @keyframes error {
+      50%{
+        transform: rotate(-2deg);
+      }
+      100%{
+        transform: rotate(0);
+      }
+    }
+  }
+}
+.input-error-styles{
+  color: red !important;
+  border-radius: 20px;
+  transform-origin: left;
+  border: 1px solid #FF002E;
+  background: rgba(255, 0, 46, 0.20);
+  backdrop-filter: blur(2px);
+  animation: error 0.8s alternate ;
+  &::placeholder{
+    color: red;
+  }
+  &:focus{
+    border: none;
+    outline: none;
+  }
+  @at-root {
+    @keyframes error {
+      50%{
+        transform: rotate(-2deg);
+      }
+      100%{
+        transform: rotate(0);
+      }
+    }
+  }
+}

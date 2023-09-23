@@ -1,0 +1,114 @@
+@import "variable";
+@import "customClass";
+@import "inputsClass";
+@import "modalClass";
+@import "swiper.css";
+@import "bootstrap.css";
+@import "font";
+body{
+  font-family: Pelak, serif;
+  overflow-x: hidden;
+  background: url("../../images/background.png") center ;
+  background-size: cover;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar{
+    width: 8px;
+    background: #01192e ;
+  }
+  &::-webkit-scrollbar-thumb{
+    width: 8px;
+    border-radius: 8px;
+    background-image: $background-button-linear;
+  }
+}
+button{
+  border: none;
+}
+
+#cake_image{
+  background-image: url("../../images/cacke/New Cake-1-min.webp");
+  @media screen and (max-width:500px) {
+    width: 400px;
+  }
+  @media screen and (min-width: 508px){
+    width: 420px;
+  }
+  background-size: 100% 85%;
+  background-position:center;
+  transform: translateX(-10px);
+  background-repeat: no-repeat;
+  animation: animeCake 1s  infinite;
+  position: relative;
+  @at-root {
+    @keyframes animeCake {
+      0%{
+        background-image: url("../../images/cacke/New Cake-1-min.webp");
+      }
+      20%{
+        background-image: url("../../images/cacke/New Cake-2-min.webp");
+      }
+      40%{
+        background-image: url("../../images/cacke/New Cake-3-min.webp");
+      }
+      60%{
+        background-image: url("../../images/cacke/New Cake-1-min.webp");
+      }
+      80%{
+        background-image: url("../../images/cacke/New Cake-3-min.webp");
+      }
+      100%{
+        background-image: url("../../images/cacke/New Cake-1-min.webp");
+      }
+    }
+  }
+  >.clickable{
+    &::after{
+      content: "";
+      display: flex;
+      width: 150px;
+      height: 150px;
+      background-image: url("../../icon/touch.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transition: 1s;
+      transform: translateX(-50%);
+      cursor: pointer;
+    }
+  }
+
+}
+.hpd-text{
+  position: absolute;
+  width: 300px;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.50);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 44px;
+  animation: 3s remove_text 1s forwards ;
+  @at-root {
+    @keyframes remove_text  {
+      to{
+        opacity: 0;
+      }
+    }
+  }
+}
+.ready-test{
+  opacity: 0;
+  animation: 2s show_text_anime 3s forwards;
+  @at-root {
+    @keyframes show_text_anime {
+      to{
+        opacity:1;
+      }
+    }
+  }
+}
+

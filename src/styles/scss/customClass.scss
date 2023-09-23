@@ -1,0 +1,99 @@
+//background//
+.btn-linear-orange {
+  background-image: $background-button-linear;
+}
+.btn-orange {
+  background-image: $background-button-orange;
+}
+
+//background//
+//fontsize//
+
+.fs-14px{
+  font-size: 0.875rem !important;
+}
+//fontsize//
+//padding //
+.pt-30px{
+  padding-top: 30px !important;
+}
+//padding //
+//height//
+.h-30px{
+  height: 30px;
+}
+
+.h-512px {
+  height: 512px !important;
+}
+.h-72px{
+  height: 72px !important;
+}
+.h-200px{
+  height: 200px;
+}
+
+
+//height //
+//width//
+
+.w-30px{
+  width: 30px;
+}
+@media screen and (min-width: 508px) {
+  .w-382px{
+    width: 382px !important;
+  }
+
+}
+
+.w-300px{
+  width: 300px;
+}
+.w-250px{
+  width: 250px;
+}
+
+//width //
+//text//
+.text-justify{
+  text-align: justify !important;
+}
+//text//
+
+
+.transition-1{
+  transition: 1s !important;
+}
+
+.overflow-y-scroll{
+  overflow-x: hidden !important;
+  overflow-y: scroll;
+}
+
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.bg-warm{
+  background: $background-warm;
+}
+
+.image-gift{
+  position: absolute;
+  transform: translateY(-35%);
+  scale: 0.8;
+}
+.border-orange {
+  border: 1px solid $orange-primary;
+}
+.text-orange {
+  color : $orange-primary
+}
+.bg-orange {
+  background: $orange-primary;
+}
+.bg-orange-opacity {
+  background-image: $background-orange-opacity;
+}
