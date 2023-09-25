@@ -21,11 +21,30 @@ body{
     background-image: $background-button-linear;
   }
 }
+svg{
+  vertical-align : inherit !important;
+  border: none !important;
+}
 button{
   border: none;
 }
 
-#cake_image{
+.cake-image-off{
+  background-image: url("../../images/cacke/New Cake-6-min.webp") !important;
+  background-size: 100% 85%;
+  background-position:center;
+  transform: translateX(-10px);
+  background-repeat: no-repeat;
+  scale: (1.1) !important;
+  transition: 0.2s !important;
+  @media screen and (max-width:500px) {
+    width: 400px;
+  }
+  @media screen and (min-width: 508px){
+    width: 420px;
+  }
+}
+.cake_image{
   background-image: url("../../images/cacke/New Cake-1-min.webp");
   @media screen and (max-width:500px) {
     width: 400px;
@@ -91,9 +110,13 @@ button{
   font-style: normal;
   font-weight: 900;
   line-height: 44px;
+  opacity: 0;
   animation: 3s remove_text 1s forwards ;
   @at-root {
     @keyframes remove_text  {
+      20%{
+        opacity: 1;
+      }
       to{
         opacity: 0;
       }
@@ -109,6 +132,103 @@ button{
         opacity:1;
       }
     }
+  }
+}
+#ready_test{
+  animation: 1s btn 4s infinite ;
+  @keyframes btn {
+    0%{
+      transform: rotate(10deg);
+    }
+    50%{
+      transform: rotate(-10deg)
+    }
+    100%{
+      transform: rotate(0);
+    }
+  }
+}
+
+
+$yellow: #ffd300;
+$blue: #17d3ff;
+$pink: #ff4e91;
+
+$duration: 1000;
+
+@function randomNum($min, $max) {
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+  @return $randomNum;
+}
+
+
+.confetti {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 16px;
+  background: $yellow;
+  top: 0;
+  opacity: 0;
+
+  @for $i from 1 through 13 {
+    &:nth-child(#{$i}) {
+      left: $i * 7%;
+      transform: scale(1.2) rotate(#{randomNum(-80, 80)}deg);
+      animation: makeItRain $duration * 1ms infinite ease-out;
+      animation-delay: #{randomNum(0, $duration * .5)}ms;
+      animation-duration: #{randomNum($duration * 2, $duration * 10)}ms
+    }
+  }
+
+  &:nth-child(odd) {
+    background: $blue;
+  }
+
+  &:nth-child(even) {
+    z-index: 1;
+  }
+
+  &:nth-child(4n) {
+    width: 5px;
+    height: 12px;
+    animation-duration: $duration * 2ms;
+  }
+
+  &:nth-child(3n) {
+    width: 3px;
+    height: 10px;
+    animation-duration: $duration * 2.5ms;
+    animation-delay: $duration * 1ms;
+  }
+
+  &:nth-child(4n-7) {
+    background: $pink;
+  }
+}
+
+@keyframes makeItRain {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(800px);
   }
 }
 

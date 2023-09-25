@@ -6,9 +6,13 @@
 }
 .input-styles{
   border-radius: 20px;
-  border: 1px solid #FFF;
+  border: none;
   background: rgba(255, 255, 255, 0.10);
   backdrop-filter: blur(2px);
+  &:focus{
+    border: 1px solid #FFF;
+    outline: none;
+  }
   &::placeholder{
     color: white;
   }

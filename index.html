@@ -9,93 +9,91 @@
     <script src="src/js/swiper.js"></script>
     <link rel="stylesheet" href="src/styles/css/index.css">
     <link rel="stylesheet" href="src/styles/css/swiper.css">
+
+    <script src="src/js/candle/index.js"></script>
+    <script src="src/js/helper.js"></script>
+    <script src="src/js/authentication/getCode.js"></script>
+    <script src="src/js/components/elementComponents.js"></script>
+        <script src="src/js/candle/microphonePermission.js"></script>
+        <script src="src/js/candle/readyToVoiceTesting.js"></script>
+        <script src="src/js/candle/voiceAction.js"></script>
+        <script src="src/js/candle/btnFinalAction.js"></script>
+
     <title>تولد الانزا</title>
 </head>
 <body>
 <main class="h-100 p-0 text-white container-fluid container-xxl d-flex align-content-start flex-wrap">
     <header class="col-12 p-2 d-flex pt-4 m-0 justify-content-center justify-content-md-between align-items-center">
         <div class="col-md-3 d-none d-md-flex">
-            <button class="btn fs-14px rounded-5 text-white bg-white bg-opacity-25">
+            <a href="#info" class="btn fs-14px rounded-5 text-white bg-white bg-opacity-25">
                 راهنما
                 <img src="src/icon/info-circle.svg" class="img-fluid" alt="">
-            </button>
+            </a>
 
         </div>
         <div class="col-md-3 d-flex justify-content-end">
-            <button class="btn fs-14px border rounded-5 text-white fs-6 btn-linear-orange bg-opacity-25">
+            <a href="https://elanza.com" target="_blank"  class="btn text-decoration-none fs-14px border rounded-5 text-white fs-6 btn-linear-orange bg-opacity-25">
                 ورود به سایت
                 <img src="src/icon/profile.svg" class="img-fluid" alt="">
-            </button>
+            </a>
         </div>
     </header>
     <!--top-site-->
-    <section class="col-12 px-2 row m-0 overflow-hidden justify-content-center justify-content-md-between pt-30px">
+    <div class="confetti">
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+        <div class="confetti-piece"></div>
+    </div>
+    <section class="col-12 px-2 row m-0 justify-content-center justify-content-md-between pt-30px">
         <div class="col-md-6  p-0 m-0 transition-1 d-md-none d-flex flex-wrap justify-content-center align-content-center ">
             <figure class="col-12 p-0 m-0 d-flex justify-content-center">
                 <img src="src/images/elanza-invite.png" class="img-fluid" alt="">
             </figure>
         </div>
         <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end">
-            <figure class="col-12 p-0 m-0 h-512px" id="cake_image">
-<!--                <span class="clickable" title="کلیک کن "></span>-->
+            <figure class="col-12 p-0 m-0 h-512px cake_image " id="cake_image">
+                <span id="turnOffCandle" class="clickable d-none" title="کلیک کن "></span>
             </figure>
         </div>
         <div class="col-md-6 p-0 m-0 transition-1 d-flex flex-wrap justify-content-center align-content-center ">
             <figure class="col-12 d-none d-md-flex p-0 m-0  justify-content-center">
                 <img src="src/images/elanza-invite.png" class="img-fluid" alt="">
             </figure>
-<!--           forms-->
-            <form class="col-12 mt-md-5 w-382px d-flex flex-wrap justify-content-center m-0 p-0 ">
-                <h3 dir="auto" class="hpd-text col-12">
-                    تولد دو سالگی الانزا مبارک :)
-                </h3>
-                <div class="ready-test d-flex flex-wrap justify-content-center align-content-center col-12">
-                    <h3 class="col-12 text-center m-0 p-0 fw-bold">
-                        آماده ای شمع‌هارو فوت کنی؟
-                    </h3>
-                    <button type="button" id="ready_test"
-                            class="btn col-auto col-md-12 btn-linear-orange rounded-4 mt-4 p-3 fs-5 text-white">
-                        آرهههه
-                        <img src="src/icon/like.svg" alt="" class="img-fluid">
+            <section id="formSection" class="col-12 mt-md-5 w-382px d-flex flex-wrap justify-content-center m-0 p-0 ">
+                <form id="get_mobile_form" class="col-12 d-flex flex-wrap justify-content-center p-0  ">
+                    <label class="col-12 p-0  d-flex position-relative justify-content-center ">
+                        <span id="icon_check" class="position-absolute icon-input d-none">
+                            <img src="src/icon/close-circle.svg" alt="">
+                        </span>
+                        <input id="user_mobile" autofocus maxlength="11" autocomplete="off" type="tel"
+                               class="col-12 d-flex w-382px text-white p-3 rounded-4 input-styles text-center"
+                               placeholder="شماره موبایل خود را وارد نمایید">
+                    </label>
+                    <button type="submit"
+                            class="col-12 rounded-4 p-0  m-0 mt-3 text-white  btn-orange p-3 d-flex justify-content-center align-items-center">
+                        <img src="src/icon/arrow-left.svg" class="img-fluid" alt="">
+                        بریم برا تولد
                     </button>
-                </div>
-            </form>
+                </form>
+            </section>
         </div>
-<!--        <modal class="overflow-y-scroll show-modal ">-->
-<!--            <modalBody class="overflow-visible w-382px h-512px">-->
-<!--                <figure class="col-12 m-0 h-200px position-relative p-0 d-flex justify-content-center ">-->
-<!--                    <img src="src/images/gift.svg" class="img-fluid image-gift " alt="">-->
-<!--                </figure>-->
-<!--                <section dir="auto" class="w-100 user-select-none d-flex justify-content-center align-content-start flex-wrap text-dark">-->
-<!--                    <h5 class="col-12 p-0 m-0 text-center fw-bold ">مرسی اومدی تولدمون</h5>-->
-<!--                    <p class="w-100 p-0 m-0 text-center my-4">کد تخفیف 150 هزارتومانی تولد الانزا</p>-->
-<!--                    <div  class="border-orange my-3 bg-orange-opacity col-12 d-flex justify-content-between align-items-center w-250px rounded-4 p-2 ">-->
-<!--                        <div class="rounded-3 ">-->
-<!--                            <img src="src/icon/voucher.svg" alt="">-->
-<!--                        </div>-->
-<!--                        <strong class="text-orange">-->
-<!--                            HBD21414xfewfey-->
-<!--                        </strong>-->
-<!--                        <button class="rounded-3 w-30px h-30px bg-orange">-->
-<!--                            <img src="src/icon/copy.svg" alt="">-->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                    <div class="w-250px my-2 text-center">-->
-<!--                        اینم کادوی الانزا به تو :)-->
-<!--                    </div>-->
-<!--                    <div class="col-12 my-3 d-flex justify-content-center align-items-center">-->
-<!--                        <button class="rounded-4 btn-orange text-white p-3  ">-->
-<!--                            <img src="src/icon/shop.svg" alt="">-->
-<!--                            بریم برای خرید از سایت-->
-<!--                        </button>-->
-<!--                    </div>-->
-<!--                </section>-->
-<!--            </modalBody>-->
-<!--        </modal>-->
+        <modal class="overflow-y-scroll">
+
+        </modal>
     </section>
     <!--info-->
     <section dir="rtl" class="col-12 px-2 row m-0 pb-5 p-0 mt-5">
-        <h5 class="col-12 m-0 p-0  fw-bolder">
+        <h5 id="info" class="col-12 m-0 p-0  fw-bolder">
             راهنما و توضیحات کمپین
         </h5>
         <p class="p-0 m-0 col-12  text-justify py-2">
@@ -130,53 +128,56 @@
     </section>
 </main>
 </body>
+<script src="src/js/authentication/getMobile.js"></script>
+<script src="src/js/candle/finalAction.js"></script>
+<script src="src/js/authentication/authorization.js"></script>
 <script>
-    // modal
-    const modalElement = document.getElementsByTagName("modal")[0]
-    const btnReadyTest = document.getElementById("ready_test")
-    const closeModal = document.getElementById("close_modal")
-    closeModal.addEventListener("click", () => {
-        modalElement.classList.replace("show-modal", "hide-modal")
-    })
-    btnReadyTest.addEventListener("click", () => {
-        modalElement.classList.add("show-modal")
-        modalElement.classList.replace("hide-modal", "show-modal")
-    })
 
 
-    // script.js
-    // otp
-    const inputs = document.getElementById("inputs");
-
-    inputs.addEventListener("input", function (e) {
-        const target = e.target;
-        const val = target.value;
-
-        if (isNaN(val)) {
-            target.value = "";
-            return;
+    let modalStage = document.getElementsByTagName("modal")[0]
+    let celebration = document.getElementsByClassName("confetti")[0]
+    const statusModalHandler =  (status) => {
+        modalStage.classList.add("show-modal")
+        switch (status){
+            case "readyToTest" : modalStage.innerHTML = readyToTestModal ; break // 1 action
+            case "blow" : blowing(); break // 2 action
+            case "hand" : offWithHand() ; break // 2 action
+            case "success" : modalStage.innerHTML = successModal ; break // 3 action
+            case "readyToBlow" : readyToBlowing() ; break // 4 action
+            case "failed" : failedHandler() ; break // 4 action
+            case "hide-modal" : modalStage.classList.replace("show-modal" , "hide-modal") ; break
+            default :  modalStage.classList.replace("show-modal" , "hide-modal")
         }
+    }
+    const blowing = () => {
+        celebration.style.display = "flex"
+        modalStage.innerHTML = blowModal
+        const candleMicrophonePermissionEvent = new CustomEvent('candleMicrophonePermissionEvent');
+        window.dispatchEvent(candleMicrophonePermissionEvent)
+    }
+    const offWithHand = () => {
+        celebration.style.display = "flex"
+        const candleBtnFinalActionEvent = new CustomEvent('candleBtnFinalActionEvent');
+        window.dispatchEvent(candleBtnFinalActionEvent)
+        modalStage.classList.replace("show-modal" , "hide-modal")
+    }
+    const readyToBlowing = () => {
+        celebration.style.display = "flex"
+        modalStage.classList.replace("show-modal" , "hide-modal")
+    }
 
-        if (val !== "") {
-            const next = target.nextElementSibling;
-            if (next) {
-                next.focus();
-            }
-        }
-    });
+    const copyValue = () => {
+        const voucherElement = document.getElementById("voucher_element")
+        navigator.clipboard.writeText(voucherElement.innerText)
+        alert("کپی شد")
+    }
 
-    inputs.addEventListener("keyup", function (e) {
-        const target = e.target;
-        const key = e.key.toLowerCase();
+    const failedHandler = () => {
+        modalStage.innerHTML = failedModal
+        const candleBtnFinalActionEvent = new CustomEvent('candleBtnFinalActionEvent');
+        window.dispatchEvent(candleBtnFinalActionEvent)
+        modalStage.classList.replace("show-modal" , "hide-modal")
+    }
 
-        if (key === "backspace" || key === "delete") {
-            target.value = "";
-            const prev = target.previousElementSibling;
-            if (prev) {
-                prev.focus();
-            }
-            return;
-        }
-    });
 </script>
 </html>
